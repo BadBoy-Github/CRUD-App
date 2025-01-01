@@ -1,9 +1,10 @@
 const axios = require('axios')
+const LINK = process.env.LINK || 8080
 
 
 exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
+    axios.get(`${LINK}/api/users`)
         .then(function (response) {
             res.render('index', { users: response.data});
         })
@@ -17,7 +18,7 @@ exports.add_user = (req, res) => {
 }
 
 exports.update_user = (req, res) => {
-    axios.get('http://localhost:3000/api/users',{params:{id: req.query.id}})
+    axios.get(`${LINK}/api/users`,{params:{id: req.query.id}})
       .then(function(userdata){
         res.render("update_user", {user: userdata.data})
       })
