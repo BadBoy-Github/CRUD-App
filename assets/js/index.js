@@ -14,7 +14,7 @@ $.map(unindexed_array, function(n, i){
     data[n['name']]=n['value']
 })
     var request = {
-        "url": `https://crud-app-gamma-pied.vercel.app/api/users/${data.id}`,
+        "url": `http://localhost:3000/api/users/${data.id}`,
         "method": "PUT",
         "data": data
     }
@@ -29,7 +29,7 @@ if(window.location.pathname == "/"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url": `https://crud-app-gamma-pied.vercel.app/api/users/${id}`,
+            "url": `http://localhost:3000/api/users/${id}`,
             "method": "DELETE"
         }
 
